@@ -26,10 +26,10 @@
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/icon-192x192.png">
     <link rel="apple-touch-icon" sizes="192x192" href="./assets/images/icon-192x192.png">
 
-    <!-- Font -->
+    <!-- Font (Ditambahkan Font Sacramento untuk ID & EN) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Sacramento&display=swap">
 
     <!-- Dependencies CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
@@ -42,7 +42,7 @@
             display: none !important;
         }
 
-        /* Styling Font khusus versi Korea (Default Mode Terang) */
+        /* Styling Font khusus versi Korea */
         html[lang="ko"] body {
             font-family: 'Noto Sans KR', sans-serif !important;
             color: #333333 !important;
@@ -57,30 +57,34 @@
             word-break: keep-all;
         }
 
-        /* 본문은 가독성이 좋은 고딕을 유지하고, 제목·이름만 고운바탕을 사용 */
         html[lang="ko"] .wedding-emphasis {
             font-family: 'Gowun Batang', 'Noto Sans KR', serif !important;
             font-weight: 400 !important;
             word-break: keep-all;
         }
 
-        .language-selection-title {
-            font-family: 'Gowun Batang', 'Noto Sans KR', serif !important;
-            font-weight: 700 !important;
+        /* Styling Font Cursive / Calligraphy Khusus Bahasa Indonesia & Inggris */
+        html[lang="id"] .font-esthetic,
+        html[lang="en"] .font-esthetic {
+            font-family: 'Sacramento', cursive !important;
+            font-weight: 400 !important;
+            letter-spacing: 0.02em;
         }
 
-        /* Adjustments saat Background Gelap / Mode Gelap (Dark Theme) */
-        [data-bs-theme="dark"] html[lang="ko"] body,
-        html[data-bs-theme="dark"][lang="ko"] body {
-            color: #d1d5db !important;
+        /* Penyesuaian Ukuran Font Cursive (Latin) agar Terbaca Jelas */
+        html[lang="id"] h1.font-esthetic,
+        html[lang="en"] h1.font-esthetic {
+            font-size: 2.75rem !important;
+            line-height: 1.3;
         }
 
-        [data-bs-theme="dark"] html[lang="ko"] .font-esthetic,
-        html[data-bs-theme="dark"][lang="ko"] .font-esthetic {
-            color: #e5e7eb !important;
+        html[lang="id"] h2.font-esthetic,
+        html[lang="en"] h2.font-esthetic {
+            font-size: 2.35rem !important;
+            line-height: 1.3;
         }
 
-        /* Ukuran font versi Korea */
+        /* Ukuran Font Header Khusus Bahasa Korea */
         html[lang="ko"] h1.font-esthetic {
             font-size: 2.2rem !important;
             line-height: 1.4;
@@ -91,17 +95,27 @@
             line-height: 1.4;
         }
 
-        /* Elemen yang hanya ditampilkan pada versi Korea */
+        .language-selection-title {
+            font-family: 'Gowun Batang', 'Noto Sans KR', serif !important;
+            font-weight: 700 !important;
+        }
+
+        /* Mode Gelap (Dark Theme) Adjustment */
+        [data-bs-theme="dark"] body {
+            color: #d1d5db !important;
+        }
+
+        [data-bs-theme="dark"] .font-esthetic {
+            color: #e5e7eb !important;
+        }
+
+        /* Elemen khusus versi Korea */
         .ko-only {
             display: none !important;
         }
 
         html[lang="ko"] .ko-only {
             display: block !important;
-        }
-
-        #language-selection .language-choice {
-            min-height: 48px;
         }
 
         .cursor-pointer {
@@ -131,7 +145,7 @@
             transition: opacity 0.6s ease, visibility 0.6s ease;
         }
 
-        /* Transisi Smooth Munculnya Konten Utama */
+        /* Transisi Smooth Konten Utama */
         #root {
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -139,13 +153,12 @@
 
     <!-- Dependencies JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Library JS Confetti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
 </head>
 
 <body>
 
-    <!-- Audio Player (API & File Mandiri) -->
+    <!-- Audio Player -->
     <audio id="bg-music" loop preload="auto">
         <source src="./assets/music/musikbg.mp3" type="audio/mpeg">
     </audio>
@@ -165,7 +178,7 @@
                 </div>
 
                 <div class="text-center p-4 bg-overlay-auto rounded-5">
-                    <h2 class="font-esthetic mb-3" style="font-size: 2rem;" data-lang-en="Jihoon &amp; Intania" data-lang-id="Jihoon &amp; Intania" data-lang-ko="지훈 &amp; 인타니아">Jihoon &amp; Intania</h2>
+                    <h2 class="font-esthetic mb-3" data-lang-en="Jihoon &amp; Intania" data-lang-id="Jihoon &amp; Intania" data-lang-ko="지훈 &amp; 인타니아">Jihoon &amp; Intania</h2>
                     <p class="m-0 fw-bold" style="font-size: 0.95rem;" data-lang-en="Wedding Celebration" data-lang-id="Acara Pernikahan" data-lang-ko="결혼 소식">Wedding Celebration</p>
                     <p class="mb-2" style="font-size: 0.9rem;" data-lang-en="Friday, September 18, 2026" data-lang-id="Jumat, 18 September 2026" data-lang-ko="2026년 9월 18일">Friday, September 18, 2026</p>
                     <hr class="my-2 opacity-25">
@@ -177,7 +190,6 @@
 
         <!-- Smartphone mode -->
         <div class="col-sm-7 col-md-6 col-lg-5 col-xl-4 col-xxl-3 m-0 p-0">
-            <!-- Main Content -->
             <main data-bs-spy="scroll" data-bs-target="#navbar-menu" data-bs-root-margin="25% 0% 0% 0%" data-bs-smooth-scroll="true" tabindex="0">
 
                 <!-- Home / Cover Awal -->
@@ -185,11 +197,11 @@
                     <img src="./assets/images/bg.jpeg" alt="bg" class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home">
 
                     <div class="position-relative text-center bg-overlay-auto" style="background-color: unset;">
-                        <h1 class="font-esthetic pt-5 pb-3 fw-medium" style="font-size: 2.25rem;" data-lang-en="You are Cordially Invited" data-lang-id="Kami Mengundang Anda" data-lang-ko="저희 결혼합니다">You are Cordially Invited</h1>
+                        <h1 class="font-esthetic pt-5 pb-3 fw-medium" data-lang-en="You are Cordially Invited" data-lang-id="Kami Mengundang Anda" data-lang-ko="저희 결혼합니다">You are Cordially Invited</h1>
 
                         <img src="./assets/images/bg.jpeg" alt="bg" onclick="openModalImage(this.src)" class="img-center-crop rounded-circle border border-3 border-light shadow my-3 mx-auto cursor-pointer">
 
-                        <h2 class="font-esthetic my-3" style="font-size: 2.25rem;" data-lang-en="Jihoon &amp; Intania" data-lang-id="Jihoon &amp; Intania" data-lang-ko="지훈 &amp; 인타니아">Jihoon &amp; Intania</h2>
+                        <h2 class="font-esthetic my-3" data-lang-en="Jihoon &amp; Intania" data-lang-id="Jihoon &amp; Intania" data-lang-ko="지훈 &amp; 인타니아">Jihoon &amp; Intania</h2>
 
                         <!-- Dual Dates Section -->
                         <div class="bg-theme-auto rounded-4 p-3 mx-4 my-3 shadow-sm border border-secondary border-opacity-25 ko-hide">
@@ -227,26 +239,26 @@
 
                 <!-- Bride & Groom -->
                 <section class="bg-white-black text-center" id="bride">
-                    <h2 class="font-esthetic py-4 m-0" style="font-size: 2rem;" data-lang-en="Groom &amp; Bride" data-lang-id="Mempelai Pria &amp; Wanita" data-lang-ko="신랑 신부를 소개합니다">Groom &amp; Bride</h2>
+                    <h2 class="font-esthetic py-4 m-0" data-lang-en="Groom &amp; Bride" data-lang-id="Mempelai Pria &amp; Wanita" data-lang-ko="신랑 신부를 소개합니다">Groom &amp; Bride</h2>
                     <p class="pb-4 px-2 m-0" style="font-size: 0.95rem;" data-lang-en="We would be honored and joyful if you could join us in celebrating our new beginning." data-lang-id="Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu." data-lang-ko="저희 두 사람의 새로운 시작을 따뜻하게 축하해 주시면 감사하겠습니다.">We would be honored and joyful if you could join us in celebrating our new beginning.</p>
 
                     <div class="overflow-x-hidden pb-4">
                         <div class="position-relative">
                             <div data-aos="fade-right" data-aos-duration="2000" class="pb-1">
                                 <img src="./assets/images/jihoon.jpeg" alt="Groom" onclick="openModalImage(this.src)" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer">
-                                <h2 class="font-esthetic m-0" style="font-size: 2.125rem;" data-lang-en="Han Jihoon" data-lang-id="Han Jihoon" data-lang-ko="한지훈">Han Jihoon</h2>
+                                <h2 class="font-esthetic m-0" data-lang-en="Han Jihoon" data-lang-id="Han Jihoon" data-lang-ko="한지훈">Han Jihoon</h2>
                                 <p class="mt-3 mb-1" style="font-size: 1.25rem;" data-lang-en="1st Son" data-lang-id="Putra Pertama" data-lang-ko="장남">1st Son</p>
                                 <p class="mb-0" style="font-size: 0.95rem;" data-lang-en="Father: Han Keum-yun" data-lang-id="Ayah: Han Keum-yun" data-lang-ko="아버지 한금윤">Father: Han Keum-yun</p>
                                 <p class="mb-0" style="font-size: 0.95rem;" data-lang-en="Mother: Lee Hee-eun" data-lang-id="Ibu: Lee Hee-eun" data-lang-ko="어머니 이희은">Mother: Lee Hee-eun</p>
                             </div>
                         </div>
 
-                        <h2 class="font-esthetic mt-4" style="font-size: 4.5rem;">&amp;</h2>
+                        <h2 class="font-esthetic mt-4" style="font-size: 3.5rem;">&amp;</h2>
 
                         <div class="position-relative">
                             <div data-aos="fade-left" data-aos-duration="2000" class="pb-1">
                                 <img src="./assets/images/intania.jpeg" alt="Bride" onclick="openModalImage(this.src)" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer">
-                                <h2 class="font-esthetic m-0" style="font-size: 2.125rem;" data-lang-en="Intania" data-lang-id="Intania" data-lang-ko="인타니아">Intania</h2>
+                                <h2 class="font-esthetic m-0" data-lang-en="Intania" data-lang-id="Intania" data-lang-ko="인타니아">Intania</h2>
                                 <p class="mt-3 mb-1" style="font-size: 1.25rem;" data-lang-en="2nd Daughter" data-lang-id="Putri Kedua" data-lang-ko="차녀">2nd Daughter</p>
                                 <p class="mb-0" style="font-size: 0.95rem;" data-lang-en="Father: Taip Hidayat" data-lang-id="Ayah: Taip Hidayat" data-lang-ko="아버지 타입 히다얏 (Taip Hidayat)">Father: Taip Hidayat</p>
                                 <p class="mb-0" style="font-size: 0.95rem;" data-lang-en="Mother: Elly Herlina" data-lang-id="Ibu: Elly Herlina" data-lang-ko="어머니 엘리 헤르리나 (Elly Herlina)">Mother: Elly Herlina</p>
@@ -265,7 +277,7 @@
                 <!-- Quote Section -->
                 <section class="bg-light-dark pt-2 pb-4">
                     <div class="container text-center">
-                        <h2 class="font-esthetic pt-2 pb-1 m-0" style="font-size: 2rem;" data-lang-en="Word of Blessing" data-lang-id="Kata Mutiara" data-lang-ko="결혼 소식을 전합니다">Word of Blessing</h2>
+                        <h2 class="font-esthetic pt-2 pb-1 m-0" data-lang-en="Word of Blessing" data-lang-id="Kata Mutiara" data-lang-ko="결혼 소식을 전합니다">Word of Blessing</h2>
 
                         <div class="bg-theme-auto mt-4 p-3 shadow rounded-4" data-aos="fade-down" data-aos-duration="2000">
                             <p class="p-1 mb-2 wedding-emphasis" style="font-size: 0.95rem; line-height: 1.9;" data-lang-en="&quot;Two people who have walked different paths are now stepping onto one path together. We promise to cherish and love each other warmly, lighting up each other&#39;s lives. We would be deeply grateful to have your blessings on our very first step.&quot;" data-lang-id="&quot;Dua insan yang sebelumnya berjalan di jalur berbeda, kini siap melangkah bersama di satu jalan yang sama. Kami berjanji untuk saling mengasihi dan melengkapi. Kehadiran serta doa restu Anda pada langkah pertama kami merupakan kebahagiaan yang tak terhingga.&quot;" data-lang-ko="결혼식은 인도네시아에서 가족들과 함께 진행하게 되었습니다.<br><br>먼 곳에서 열리는 예식인 만큼 귀한 걸음을 부탁드리기 어려워 직접 모시지는 못하지만 기쁜 소식을 전하고자 합니다.<br><br>멀리서 저희의 새로운 시작을 함께 축하해 주시는 것만으로도 저희에게는 큰 기쁨입니다.">"Two people who have walked different paths are now stepping onto one path together. We promise to cherish and love each other warmly, lighting up each other's lives. We would be deeply grateful to have your blessings on our very first step."</p>
@@ -284,7 +296,7 @@
                 <!-- Wedding Date -->
                 <section class="bg-white-black pb-2" id="wedding-date">
                     <div class="container text-center">
-                        <h2 class="font-esthetic py-4 m-0" style="font-size: 2.25rem;" data-lang-en="Happy Moments" data-lang-id="Momen Bahagia" data-lang-ko="예식 안내">Happy Moments</h2>
+                        <h2 class="font-esthetic py-4 m-0" data-lang-en="Happy Moments" data-lang-id="Momen Bahagia" data-lang-ko="예식 안내">Happy Moments</h2>
 
                         <!-- Countdown -->
                         <div class="border rounded-pill shadow py-2 px-4 mt-2 mb-4">
@@ -308,7 +320,7 @@
 
                         <div class="overflow-x-hidden">
                             <div class="py-2" data-aos="fade-right" data-aos-duration="1500">
-                                <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem;" data-lang-en="The Solemnization Ceremony(Cikarang)" data-lang-id="Acara Pernikahan (Cikarang)" data-lang-ko="결혼식 (치카랑)">Intimate Lunch (Cikarang)</h2>
+                                <h2 class="font-esthetic m-0 py-2" data-lang-en="The Solemnization Ceremony(Cikarang)" data-lang-id="Acara Pernikahan (Cikarang)" data-lang-ko="결혼식 (치카랑)">Intimate Lunch (Cikarang)</h2>
                                 <p style="font-size: 0.95rem;" data-lang-en="Friday, September 18, 2026" data-lang-id="Jumat, 18 September 2026" data-lang-ko="2026년 9월 18일 금요일">Friday, September 18, 2026</p>
                                 <p style="font-size: 0.95rem;" data-lang-en="10:00 AM - 12:00 PM (WIB)" data-lang-id="Pukul 10.00 - 12.00 WIB" data-lang-ko="오전 10:00 ~ 낮 12:00 (WIB)">10:00 AM - 12:00 PM (WIB)</p>
                                 <p style="font-size: 0.95rem;" data-lang-en="Kampung Kecil Cikarang" data-lang-id="Kampung Kecil Cikarang" data-lang-ko="캄풍 케칠 치카랑 (Kampung Kecil Cikarang)">Kampung Kecil Cikarang</p>
@@ -319,7 +331,7 @@
                             </div>
 
                             <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
-                                <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem;" data-lang-en="Intimate Dinner (Jakarta)" data-lang-id="Makan Malam (Jakarta)" data-lang-ko="소규모 만찬 (자카르타)">Intimate Dinner (Jakarta)</h2>
+                                <h2 class="font-esthetic m-0 py-2" data-lang-en="Intimate Dinner (Jakarta)" data-lang-id="Makan Malam (Jakarta)" data-lang-ko="소규모 만찬 (자카르타)">Intimate Dinner (Jakarta)</h2>
                                 <p style="font-size: 0.95rem;" data-lang-en="Wednesday, September 23, 2026" data-lang-id="Rabu, 23 September 2026" data-lang-ko="2026년 9월 23일 수요일">Wednesday, September 23, 2026</p>
                                 <p style="font-size: 0.95rem;" data-lang-en="07:00 PM - 09:00 PM (WIB)" data-lang-id="Pukul 19.00 - 21.00 WIB" data-lang-ko="오후 7:00 ~ 9:00 (WIB)">07:00 PM - 09:00 PM (WIB)</p>
                                 <p style="font-size: 0.95rem;" data-lang-en="Kampung Kecil Senayan" data-lang-id="Kampung Kecil Senayan" data-lang-ko="캄풍 케칠 세나얀 (Kampung Kecil Senayan)">Kampung Kecil Senayan</p>
@@ -350,7 +362,7 @@
                 <!-- Love Gift / Wedding Gift Section -->
                 <section class="bg-light-dark pb-3 ko-hide" id="gift">
                     <div class="container text-center">
-                        <h2 class="font-esthetic pt-3 mb-4" style="font-size: 2.25rem;" data-lang-en="Wedding Gift" data-lang-id="Tanda Kasih" data-lang-ko="">Wedding Gift</h2>
+                        <h2 class="font-esthetic pt-3 mb-4" data-lang-en="Wedding Gift" data-lang-id="Tanda Kasih" data-lang-ko="">Wedding Gift</h2>
                         <p class="mb-1" style="font-size: 0.95rem;" data-lang-en="If you wish to send your blessings as a gift, please use the bank account details below." data-lang-id="Bagi Anda yang ingin memberikan tanda kasih, dapat melalui rekening di bawah ini." data-lang-ko="">If you wish to send your blessings as a gift, please use the bank account details below.</p>
 
                         <div class="bg-theme-auto rounded-4 shadow p-3 mx-4 mt-4 text-start" data-aos="fade-up" data-aos-duration="2500">
@@ -404,7 +416,7 @@
                 <section class="bg-white-black pb-5 pt-3" id="gallery">
                     <div class="container">
                         <div class="border rounded-5 shadow p-3">
-                            <h2 class="font-esthetic text-center py-2 m-0" style="font-size: 2.25rem;" data-lang-en="Gallery" data-lang-id="Galeri Foto" data-lang-ko="갤러리">Gallery</h2>
+                            <h2 class="font-esthetic text-center py-2 m-0" data-lang-en="Gallery" data-lang-id="Galeri Foto" data-lang-ko="갤러리">Gallery</h2>
 
                             <div id="carousel-image-one" data-aos="fade-up" data-aos-duration="1500" class="carousel slide mt-4" data-bs-ride="carousel">
                                 <div class="carousel-indicators">
@@ -443,7 +455,7 @@
                 <section class="bg-light-dark my-0 pb-4 pt-3" id="comment">
                     <div class="container">
                         <div class="border rounded-5 shadow p-3 mb-2 bg-theme-auto">
-                            <h2 class="font-esthetic text-center mt-2 mb-4" style="font-size: 2.25rem;" data-lang-en="Wishes &amp; Messages" data-lang-id="Ucapan &amp; Doa" data-lang-ko="축하 메시지">Wishes &amp; Messages</h2>
+                            <h2 class="font-esthetic text-center mt-2 mb-4" data-lang-en="Wishes &amp; Messages" data-lang-id="Ucapan &amp; Doa" data-lang-ko="축하 메시지">Wishes &amp; Messages</h2>
 
                             <form id="rsvpForm">
                                 <div class="mb-3">
@@ -545,11 +557,11 @@
         </div>
     </div>
 
-    <!-- Tampilan Awal: View Memilih Bahasa (Welcome Overlay) -->
+    <!-- Tampilan Awal: Welcome Overlay -->
     <div class="loading-page bg-white-black" id="welcome">
         <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto">
             <div class="d-flex flex-column text-center px-4" style="width: min(92vw, 420px);">
-                <h2 class="font-esthetic mb-3" style="font-size: 2.25rem;">Jihoon &amp; Intania</h2>
+                <h2 class="font-esthetic mb-3">Jihoon &amp; Intania</h2>
 
                 <img src="./assets/images/bg.jpeg" alt="background" class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto">
 
@@ -568,10 +580,8 @@
         </div>
     </div>
 
-    <!-- Floating Action Buttons (Diberi Class d-none Agar Sembunyi Di Welcome Screen) -->
+    <!-- Floating Action Buttons -->
     <div id="floating-actions" class="d-none position-fixed flex-column align-items-end" style="bottom: 10vh; right: 2vh; z-index: 1030;">
-        
-        <!-- Language Switcher -->
         <div class="dropdown mt-3">
             <button class="btn bg-light-dark border btn-sm rounded-circle btn-transparent shadow-sm d-flex justify-content-center align-items-center" type="button" id="dropdownLanguage" data-bs-toggle="dropdown" aria-expanded="false" style="width: 38px; height: 38px;" title="Change Language">
                 <i class="fa-solid fa-language fs-5"></i>
@@ -583,12 +593,10 @@
             </ul>
         </div>
 
-        <!-- Switch Theme Button -->
         <button type="button" id="button-theme" class="btn bg-light-dark border btn-sm rounded-circle btn-transparent shadow-sm mt-3 d-flex justify-content-center align-items-center" aria-label="Change theme" onclick="toggleTheme()" style="width: 38px; height: 38px;" title="Toggle Theme">
             <i id="theme-icon" class="fa-solid fa-circle-half-stroke"></i>
         </button>
 
-        <!-- Audio Button -->
         <button type="button" id="button-music" class="btn bg-light-dark border btn-sm rounded-circle btn-transparent shadow-sm mt-3 d-flex justify-content-center align-items-center" aria-label="Change audio" onclick="toggleAudio()" style="width: 38px; height: 38px;" title="Toggle Music">
             <i id="music-icon" class="fa-solid fa-circle-pause"></i>
         </button>
@@ -608,7 +616,7 @@
         </div>
     </div>
 
-    <!-- Scripting Logic & Multilingual Handler -->
+    <!-- Scripting Logic -->
     <script>
         const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwa4xUtbnicf5vLzfFkFd_HC9jxqnqc8wjesxkW4amIlIQppYnuGfbBQyhy4gp52oxeQQ/exec";
 
@@ -618,7 +626,6 @@
             ko: '아직 등록된 축하 메시지가 없습니다.'
         };
 
-        // 1. Theme Switcher Logic
         function applyTheme(theme) {
             document.documentElement.setAttribute('data-bs-theme', theme);
             const icon = document.getElementById('theme-icon');
@@ -656,7 +663,6 @@
             }
         }
 
-        // 2. Confetti Function
         function launchConfetti() {
             if (typeof confetti === 'function') {
                 const count = 200;
@@ -676,7 +682,6 @@
             }
         }
 
-        // 3. Open Invitation Flow (Memunculkan Floating Actions)
         function openInvitation(lang) {
             setLanguage(lang);
 
@@ -685,7 +690,6 @@
                 rootElem.classList.remove('opacity-0');
             }
 
-            // Tampilkan kembali Floating Action Buttons setelah klik bahasa
             const floatingActions = document.getElementById('floating-actions');
             if (floatingActions) {
                 floatingActions.classList.remove('d-none');
@@ -710,7 +714,6 @@
             }
         }
 
-        // 4. Language Switcher
         function setLanguage(lang) {
             if (!['en', 'id', 'ko'].includes(lang)) lang = 'en';
             document.documentElement.lang = lang;
@@ -732,7 +735,6 @@
             }
         }
 
-        // 5. Audio Control
         function toggleAudio() {
             const audio = document.getElementById('bg-music');
             const icon = document.getElementById('music-icon');
@@ -745,7 +747,6 @@
             }
         }
 
-        // 6. Modal Image Opener
         function openModalImage(src) {
             const modalImg = document.getElementById('show-modal-image');
             const modalEl = document.getElementById('modal-image');
@@ -756,7 +757,6 @@
             }
         }
 
-        // 7. Copy Text
         function copyToClipboard(text, btn) {
             navigator.clipboard.writeText(text).then(() => {
                 const originalHtml = btn.innerHTML;
@@ -767,7 +767,6 @@
             });
         }
 
-        // 8. Load Comments From Google Script API
         function loadComments() {
             const listContainer = document.getElementById('ucapanList');
             if (!listContainer) return;
@@ -805,7 +804,6 @@
                 });
         }
 
-        // 9. Countdown Timer
         function startCountdown() {
             const targetDate = new Date("2026-09-18T10:00:00").getTime();
             setInterval(() => {
@@ -826,7 +824,6 @@
             }, 1000);
         }
 
-        // 10. Form Submit Handler
         document.addEventListener('DOMContentLoaded', () => {
             initTheme();
             startCountdown();
