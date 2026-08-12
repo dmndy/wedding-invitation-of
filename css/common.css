@@ -1,0 +1,69 @@
+/* Core & Layout Settings */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Helpers */
+.font-esthetic {
+    font-family: 'Gowun Batang', 'Noto Sans KR', serif !important;
+}
+
+.font-serif-custom {
+    font-family: 'Great Vibes', cursive !important;
+}
+
+.font-sans-custom {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+/* Image Utilities */
+.img-center-crop {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.bg-cover-home {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Flex Utilities */
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c5a880;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8c7355;
+}

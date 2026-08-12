@@ -1,0 +1,49 @@
+/* Keyframe Animations */
+
+/* Pulse Icon Effect */
+@keyframes pulse-love {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.15); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+.animate-pulse-love {
+    animation: pulse-love 2s infinite ease-in-out;
+}
+
+/* Spin Button */
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.spin-button {
+    animation: spin-slow 8s linear infinite;
+}
+
+/* Fade In Up Entrance */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Smooth Transition Overlay */
+.loading-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
+}

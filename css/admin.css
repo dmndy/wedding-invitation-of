@@ -1,0 +1,33 @@
+/* Admin Panel & Dashboard Helpers */
+.admin-sidebar {
+    min-height: 100vh;
+    background-color: #1c1917;
+    color: #f5f5f4;
+}
+
+.admin-sidebar .nav-link {
+    color: #a8a29e;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.25rem;
+}
+
+.admin-sidebar .nav-link:hover,
+.admin-sidebar .nav-link.active {
+    color: #ffffff;
+    background-color: #292524;
+}
+
+.table-responsive-custom {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e7e5e4;
+}
+
+.table-custom th {
+    background-color: #f5f5f4;
+    color: #44403c;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
