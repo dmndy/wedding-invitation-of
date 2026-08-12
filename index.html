@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <!-- Common Tag -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jihoon &amp; Intania Wedding Celebration</title>
+
+    <!-- SEO Tag / Open Graph (Pratinjau Link / Link Preview) -->
+    <meta property="og:image" content="./assets/images/bg.jpeg">
+    <meta property="og:image:secure_url" content="./assets/images/bg.jpeg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="Jihoon &amp; Intania Wedding Cover">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="./assets/images/bg.jpeg">
+
+    <!-- Appearance -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Jihoon &amp; Intania Wedding">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="dark light">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="canonical" href="https://ulems.my.id/">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://ulems.my.id/assets/images/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="https://ulems.my.id/assets/images/icon-192x192.png">
+
+    <!-- Preconnect CDN -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+
+    <!-- Preload Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha256-2FMn2Zx6PuH5tdBQDRNwrOo60ts5wWPC9R8jK67b3t4=" crossorigin="anonymous" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css" integrity="sha256-4rTIfo5GQTi/7UJqoyUJQKzxW8VN/YBH31+Cy+vTZj4=" crossorigin="anonymous" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha256-5P1JGBOIxI7FBAvT/mb1fCnI5n/NhQKzNUuW7Hq0fMc=" crossorigin="anonymous" as="script">
+
+    <!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+
+    <!-- Dependencies CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha256-2FMn2Zx6PuH5tdBQDRNwrOo60ts5wWPC9R8jK67b3t4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css" integrity="sha256-4rTIfo5GQTi/7UJqoyUJQKzxW8VN/YBH31+Cy+vTZj4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/guest.css">
+
+    <style>
+        /* Sembunyikan elemen khusus saat dalam mode Bahasa Korea */
+        html[lang="ko"] .ko-hide {
+            display: none !important;
+        }
+
+        /* Styling Font khusus versi Korea (Default Mode Terang) */
+        html[lang="ko"] body {
+            font-family: 'Noto Sans KR', sans-serif !important;
+            color: #333333 !important;
+            letter-spacing: -0.02em;
+        }
+
+        html[lang="ko"] .font-esthetic {
+            font-family: 'Gowun Batang', 'Noto Sans KR', serif !important;
+            font-weight: 700 !important;
+            color: #222222 !important;
+            letter-spacing: -0.015em;
+            word-break: keep-all;
+        }
+
+        /* 본문은 가독성이 좋은 고딕을 유지하고, 제목·이름만 고운바탕을 사용 */
+        html[lang="ko"] .wedding-emphasis {
+            font-family: 'Gowun Batang', 'Noto Sans KR', serif !important;
+            font-weight: 400 !important;
+            word-break: keep-all;
+        }
+
+        .language-selection-title {
+            font-family: 'Gowun Batang', 'Noto Sans KR', serif !important;
+            font-weight: 700 !important;
+        }
+
+        /* Adjustments saat Background Gelap / Mode Gelap (Dark Theme) */
+        [data-bs-theme="dark"] html[lang="ko"] body,
+        html[data-bs-theme="dark"][lang="ko"] body {
+            color: #d1d5db !important; /* Warna Grey Terang untuk teks biasa */
+        }
+
+        [data-bs-theme="dark"] html[lang="ko"] .font-esthetic,
+        html[data-bs-theme="dark"][lang="ko"] .font-esthetic {
+            color: #e5e7eb !important; /* Warna Grey Terang mendekati putih untuk judul/nama */
+        }
+
+        /* Ukuran font versi Korea */
+        html[lang="ko"] h1.font-esthetic {
+            font-size: 2.2rem !important;
+            line-height: 1.4;
+        }
+
+        html[lang="ko"] h2.font-esthetic {
+            font-size: 1.9rem !important;
+            line-height: 1.4;
+        }
+
+        /* Elemen yang hanya ditampilkan pada versi Korea */
+        .ko-only {
+            display: none !important;
+        }
+
+        html[lang="ko"] .ko-only {
+            display: block !important;
+        }
+
+        #language-selection .language-choice {
+            min-height: 48px;
+        }
+    </style>
+
+    <!-- Dependencies JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha256-5P1JGBOIxI7FBAvT/mb1fCnI5n/NhQKzNUuW7Hq0fMc=" crossorigin="anonymous"></script>
+    <script src="./dist/guest.js"></script>
+</head>
+
+<body data-key="d9faced3377732b0edf19e90d1bde0cd5de04801c75eb41743" data-url="https://api.ulems.my.id/" data-audio="./assets/music/musikbg.mp3" data-confetti="true" data-time="2026-09-18 10:00:00">
+
+    <!-- Root Invitation -->
+    <div class="row m-0 p-0 opacity-0" id="root">
+
+        <!-- Desktop mode -->
+        <div class="sticky-top vh-100 d-none d-sm-block col-sm-5 col-md-6 col-lg-7 col-xl-8 col-xxl-9 overflow-y-hidden m-0 p-0">
+            <div class="position-relative bg-white-black d-flex justify-content-center align-items-center vh-100">
+                <div class="d-flex position-absolute w-100 h-100">
+                    <div class="position-relative overflow-hidden vw-100">
+                        <div class="position-absolute h-100 w-100 slide-desktop" style="opacity: 0;">
+                            <img src="./assets/images/placeholder.webp" data-src="https://picsum.photos/1000/1000?random=7" alt="bg" class="bg-cover-home" style="mask-image: none; opacity: 30%;">
+                        </div>
+                        <div class="position-absolute h-100 w-100 slide-desktop" style="opacity: 0;">
+                            <img src="./assets/images/placeholder.webp" data-src="https://picsum.photos/1000/1000?random=8" alt="bg" class="bg-cover-home" style="mask-image: none; opacity: 30%;">
+                        </div>
+                        <div class="position-absolute h-100 w-100 slide-desktop" style="opacity: 0;">
+                            <img src="./assets/images/placeholder.webp" data-src="https://picsum.photos/1000/1000?random=9" alt="bg" class="bg-cover-home" style="mask-image: none; opacity: 30%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center p-4 bg-overlay-auto rounded-5">
+                    <h2 class="font-esthetic mb-3" style="font-size: 2rem;" data-lang-en="Jihoon &amp; Intania" data-lang-id="Jihoon &amp; Intania" data-lang-ko="지훈 &amp; 인타니아">Jihoon &amp; Intania</h2>
+                    <p class="m-0 fw-bold" style="font-size: 0.95rem;" data-lang-en="Wedding Celebration" data-lang-id="Acara Pernikahan" data-lang-ko="결혼 소식">Wedding Celebration</p>
+                    <p class="mb-2" style="font-size: 0.9rem;" data-lang-en="Friday, September 18, 2026" data-lang-id="Jumat, 18 September 2026" data-lang-ko="2026년 9월 18일">Friday, September 18, 2026</p>
+                    <hr class="my-2 opacity-25">
+                    <p class="m-0 fw-bold" style="font-size: 0.95rem;" data-lang-en="Intimate Dinner" data-lang-id="Makan Malam" data-lang-ko="소규모 만찬">Intimate Dinner</p>
+                    <p class="m-0" style="font-size: 0.9rem;" data-lang-en="Wednesday, September 23, 2026" data-lang-id="Rabu, 23 September 2026" data-lang-ko="2026년 9월 23일">Wednesday, September 23, 2026</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Smartphone mode -->
+        <div class="col-sm-7 col-md-6 col-lg-5 col-xl-4 col-xxl-3 m-0 p-0">
+            <!-- Main Content -->
+            <main data-bs-spy="scroll" data-bs-target="#navbar-menu" data-bs-root-margin="25% 0% 0% 0%" data-bs-smooth-scroll="true" tabindex="0">
+
+                <!-- Home / Cover Awal -->
+                <section id="home" class="bg-light-dark position-relative overflow-hidden p-0 m-0">
+                    <img src="./assets/images/placeholder.webp" data-src="./assets/images/bg.jpeg" alt="bg" class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home">
+
+                    <div class="position-relative text-center bg-overlay-auto" style="background-color: unset;">
+                        <h1 class="font-esthetic pt-5 pb-3 fw-medium" style="font-size: 2.25rem;" data-lang-en="You are Cordially Invited" data-lang-id="Kami Mengundang Anda" data-lang-ko="저희 결혼합니다">You are Cordially Invited</h1>
+
+                        <img src="./assets/images/placeholder.webp" data-src="./assets/images/bg.jpeg" alt="bg" onclick="undangan.guest.modal(this)" class="img-center-crop rounded-circle border border-3 border-light shadow my-3 mx-auto cursor-pointer">
+
+                        <h2 class="font-esthetic my-3" style="font-size: 2.25rem;" data-lang-en="Jihoon &amp; Intania" data-lang-id="Jihoon &amp; Intania" data-lang-ko="지훈 &amp; 인타니아">Jihoon &amp; Intania</h2>
+
+                        <!-- Dual Dates Section (Disembunyikan di Korea) -->
+                        <div class="bg-theme-auto rounded-4 p-3 mx-4 my-3 shadow-sm border border-secondary border-opacity-25 ko-hide">
+                            <div class="mb-2">
+                                <small class="text-uppercase tracking-wider opacity-75 d-block" style="font-size: 0.75rem;" data-lang-en="The Solemnization Ceremony" data-lang-id="Akad Nikah" data-lang-ko="">The Solemnization Ceremony</small>
+                                <strong style="font-size: 0.95rem;" data-lang-en="Friday, September 18, 2026" data-lang-id="Jumat, 18 September 2026" data-lang-ko="">Friday, September 18, 2026</strong>
+                            </div>
+                            <hr class="my-2 opacity-25">
+                            <div>
+                                <small class="text-uppercase tracking-wider opacity-75 d-block" style="font-size: 0.75rem;" data-lang-en="Intimate Dinner" data-lang-id="Makan Malam" data-lang-ko="">Intimate Dinner</small>
+                                <strong style="font-size: 0.95rem;" data-lang-en="Wednesday, September 23, 2026" data-lang-id="Rabu, 23 September 2026" data-lang-ko="">Wednesday, September 23, 2026</strong>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-outline-auto btn-sm shadow rounded-pill px-3 py-1 ko-hide" style="font-size: 0.825rem;">
+                            <i class="fa-solid fa-calendar-check me-2"></i><span data-lang-en="Add to Google Calendar" data-lang-id="Tambah ke Google Calendar" data-lang-ko="">Add to Google Calendar</span>
+                        </button>
+
+                        <div class="d-flex justify-content-center align-items-center mt-4 mb-2">
+                            <div class="mouse-animation border border-secondary border-2 rounded-5 px-2 py-1 opacity-50">
+                                <div class="scroll-animation rounded-4 bg-secondary"></div>
+                            </div>
+                        </div>
+
+                        <p class="pb-4 m-0 text-secondary" style="font-size: 0.825rem;" data-lang-en="Scroll down" data-lang-id="Gulir ke bawah" data-lang-ko="아래로 스크롤하세요">Scroll down</p>
+                    </div>
+                </section>
+
+                <!-- Wave Separator -->
+                <div class="svg-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="color-theme-svg no-gap-bottom">
+                        <path fill="currentColor" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,165.3C672,160,768,96,864,96C960,96,1056,160,1152,154.7C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                    </svg>
+                </div>
+
+                <!-- Bride & Groom -->
+                <section class="bg-white-black text-center" id="bride">
+                
+                    <h2 class="font-esthetic py-4 m-0" style="font-size: 2rem;" data-lang-en="Groom &amp; Bride" data-lang-id="Mempelai Pria &amp; Wanita" data-lang-ko="신랑 신부를 소개합니다">Groom &amp; Bride</h2>
+                    <p class="pb-4 px-2 m-0" style="font-size: 0.95rem;" data-lang-en="We would be honored and joyful if you could join us in celebrating our new beginning." data-lang-id="Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu." data-lang-ko="저희 두 사람의 새로운 시작을 따뜻하게 축하해 주시면 감사하겠습니다.">We would be honored and joyful if you could join us in celebrating our new beginning.</p>
+
+                    <div class="overflow-x-hidden pb-4">
+
+                        <div class="position-relative">
+                            <!-- Love animation -->
+                            <div class="position-absolute" style="top: 0%; right: 5%;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="opacity-50" data-time="500" data-class="animate-love" viewBox="0 0 16 16">
+                                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                </svg>
+                            </div>
+
+                            <div data-aos="fade-right" data-aos-duration="2000" class="pb-1">
+                                <img src="./assets/images/placeholder.webp" data-src="./assets/images/jihoon.jpeg" alt="Groom" onclick="undangan.guest.modal(this)" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer">
+                                <h2 class="font-esthetic m-0" style="font-size: 2.125rem;" data-lang-en="Han Jihoon" data-lang-id="Han Jihoon" data-lang-ko="한지훈">Han Jihoon</h2>
+                                <p class="mt-3 mb-1" style="font-size: 1.25rem;" data-lang-en="1st Son" data-lang-id="Putra Pertama" data-lang-ko="장남">1st Son</p>
+                                <p class="mb-0" style="font-size: 0.95rem;" data-lang-en="Father: Han Keum-yun" data-lang-id="Ayah: Han Keum-yun" data-lang-ko="아버지 한금윤">Father: Han Keum-yun</p>
+                                <p class="mb-0" style="font-size: 0.95rem;" data-lang-en="Mother: Lee Hee-eun" data-lang-id="Ibu: Lee Hee-eun" data-lang-ko="어머니 이희은">Mother: Lee Hee-eun</p>
+                            </div>
+
+                            <!-- Love animation -->
+                            <div class="position-absolute" style="top: 90%; left: 5%;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="opacity-50" data-time="2000" data-class="animate-love" viewBox="0 0 16 16">
+                                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <h2 class="font-esthetic mt-4" style="font-size: 4.5rem;">&amp;</h2>
+
+                        <div class="position-relative">
+                            <!-- Love animation -->
+                            <div class="position-absolute" style="top: 0%; right: 5%;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="opacity-50" data-time="3000" data-class="animate-love" viewBox="0 0 16 16">
+                                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                </svg>
+                            </div>
+
+                            <div data-aos="fade-left" data-aos-duration="2000" class="pb-1">
+                                <img src="./assets/images/placeholder.webp" data-src="./assets/images/intania.jpeg" alt="Bride" onclick="undangan.guest.modal(this)" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer">
+                                <h2 class="font-esthetic m-0" style="font-size: 2.125rem;" data-lang-en="Intania" data-lang-id="Intania" data-lang-ko="인타니아">Intania</h2>
+                                <p class="mt-3 mb-1" style="font-size: 1.25rem;" data-lang-en="2nd Daughter" data-lang-id="Putri Kedua" data-lang-ko="차녀">2nd Daughter</p>
+                                <p class="mb-0" style="font-size: 0.95rem;" data-lang-en="Father: Taip Hidayat" data-lang-id="Ayah: Taip Hidayat" data-lang-ko="아버지 타입 히다얏 (Taip Hidayat)">Father: Taip Hidayat</p>
+                                <p class="mb-0" style="font-size: 0.95rem;" data-lang-en="Mother: Elly Herlina" data-lang-id="Ibu: Elly Herlina" data-lang-ko="어머니 엘리 헤르리나 (Elly Herlina)">Mother: Elly Herlina</p>
+                            </div>
+
+                            <!-- Love animation -->
+                            <div class="position-absolute" style="top: 90%; left: 5%;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="opacity-50" data-time="2500" data-class="animate-love" viewBox="0 0 16 16">
+                                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Wave Separator -->
+                <div class="svg-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="color-theme-svg no-gap-bottom">
+                        <path fill="currentColor" fill-opacity="1" d="M0,192L40,181.3C80,171,160,149,240,149.3C320,149,400,171,480,165.3C560,160,640,128,720,128C800,128,880,160,960,186.7C1040,213,1120,235,1200,218.7C1280,203,1360,149,1400,122.7L1440,96L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path>
+                    </svg>
+                </div>
+
+                <!-- Quote Section -->
+                <section class="bg-light-dark pt-2 pb-4">
+                    <div class="container text-center">
+                        <h2 class="font-esthetic pt-2 pb-1 m-0" style="font-size: 2rem;" data-lang-en="Word of Blessing" data-lang-id="Kata Mutiara" data-lang-ko="결혼 소식을 전합니다">Word of Blessing</h2>
+
+                        <div class="bg-theme-auto mt-4 p-3 shadow rounded-4" data-aos="fade-down" data-aos-duration="2000">
+                            <p class="p-1 mb-2 wedding-emphasis" style="font-size: 0.95rem; line-height: 1.9;" data-lang-en="&quot;Two people who have walked different paths are now stepping onto one path together. We promise to cherish and love each other warmly, lighting up each other&#39;s lives. We would be deeply grateful to have your blessings on our very first step.&quot;" data-lang-id="&quot;Dua insan yang sebelumnya berjalan di jalur berbeda, kini siap melangkah bersama di satu jalan yang sama. Kami berjanji untuk saling mengasihi dan melengkapi. Kehadiran serta doa restu Anda pada langkah pertama kami merupakan kebahagiaan yang tak terhingga.&quot;" data-lang-ko="결혼식은 인도네시아에서 가족들과 함께 진행하게 되었습니다.<br><br>먼 곳에서 열리는 예식인 만큼 귀한 걸음을 부탁드리기 어려워 직접 모시지는 못하지만 기쁜 소식을 전하고자 합니다.<br><br>멀리서 저희의 새로운 시작을 함께 축하해 주시는 것만으로도 저희에게는 큰 기쁨입니다.">"Two people who have walked different paths are now stepping onto one path together. We promise to cherish and love each other warmly, lighting up each other's lives. We would be deeply grateful to have your blessings on our very first step."</p>
+                            <p class="m-0 p-0 text-theme-auto" style="font-size: 0.95rem;" data-lang-en="We warmly invite you to our special day" data-lang-id="Kami mengundang Anda pada hari bahagia kami" data-lang-ko="">We warmly invite you to our special day</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Wave Separator -->
+                <div class="svg-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="color-theme-svg no-gap-bottom">
+                        <path fill="currentColor" fill-opacity="1" d="M0,96L30,106.7C60,117,120,139,180,154.7C240,171,300,181,360,186.7C420,192,480,192,540,181.3C600,171,660,149,720,154.7C780,160,840,192,900,208C960,224,1020,224,1080,208C1140,192,1200,160,1260,138.7C1320,117,1380,107,1410,101.3L1440,96L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+                    </svg>
+                </div>
+
+                <!-- Wedding Date -->
+                <section class="bg-white-black pb-2" id="wedding-date">
+                    <div class="container text-center">
+                        <h2 class="font-esthetic py-4 m-0" style="font-size: 2.25rem;" data-lang-en="Happy Moments" data-lang-id="Momen Bahagia" data-lang-ko="예식 안내">Happy Moments</h2>
+
+                        <div class="border rounded-pill shadow py-2 px-4 mt-2 mb-4">
+                            <div class="row justify-content-center">
+                                <div class="col-3 p-1">
+                                    <p class="d-inline m-0 p-0" style="font-size: 1.25rem;" id="day">0</p><small class="ms-1 me-0 my-0 p-0 d-inline" data-lang-en="Days" data-lang-id="Hari" data-lang-ko="일">Days</small>
+                                </div>
+                                <div class="col-3 p-1">
+                                    <p class="d-inline m-0 p-0" style="font-size: 1.25rem;" id="hour">0</p><small class="ms-1 me-0 my-0 p-0 d-inline" data-lang-en="Hours" data-lang-id="Jam" data-lang-ko="시간">Hours</small>
+                                </div>
+                                <div class="col-3 p-1">
+                                    <p class="d-inline m-0 p-0" style="font-size: 1.25rem;" id="minute">0</p><small class="ms-1 me-0 my-0 p-0 d-inline" data-lang-en="Mins" data-lang-id="Menit" data-lang-ko="분">Mins</small>
+                                </div>
+                                <div class="col-3 p-1">
+                                    <p class="d-inline m-0 p-0" style="font-size: 1.25rem;" id="second">0</p><small class="ms-1 me-0 my-0 p-0 d-inline" data-lang-en="Secs" data-lang-id="Detik" data-lang-ko="초">Secs</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="py-2 m-0" style="font-size: 0.95rem;" data-lang-en="Under God&#39;s grace and blessing, we have arranged the reception gatherings as follows." data-lang-id="Dengan memohon rahmat dan berkah Tuhan, kami menyelenggarakan acara sebagai berikut." data-lang-ko="결혼식 일정은 아래와 같습니다.">Under God's grace and blessing, we have arranged the reception gatherings as follows.</p>
+
+                        <!-- Love animation -->
+                        <div class="position-relative">
+                            <div class="position-absolute" style="top: 0%; right: 5%;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="opacity-50" data-time="3000" data-class="animate-love" viewBox="0 0 16 16">
+                                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="overflow-x-hidden">
+                            <div class="py-2" data-aos="fade-right" data-aos-duration="1500">
+                                <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem;" data-lang-en="The Solemnization Ceremony(Cikarang)" data-lang-id="Acara Pernikahan (Cikarang)" data-lang-ko="결혼식 (치카랑)">Intimate Lunch (Cikarang)</h2>
+                                <p style="font-size: 0.95rem;" data-lang-en="Friday, September 18, 2026" data-lang-id="Jumat, 18 September 2026" data-lang-ko="2026년 9월 18일 금요일">Friday, September 18, 2026</p>
+                                <p style="font-size: 0.95rem;" data-lang-en="10:00 AM - 12:00 PM (WIB)" data-lang-id="Pukul 10.00 - 12.00 WIB" data-lang-ko="오전 10:00 ~ 낮 12:00 (WIB)">10:00 AM - 12:00 PM (WIB)</p>
+                                <p style="font-size: 0.95rem;" data-lang-en="Kampung Kecil Cikarang" data-lang-id="Kampung Kecil Cikarang" data-lang-ko="캄풍 케칠 치카랑 (Kampung Kecil Cikarang)">Kampung Kecil Cikarang</p>
+                            </div>
+                            <div class="py-2" data-aos="fade-down" data-aos-duration="1000">
+                                <small class="d-block my-1">Jalan raya pilar Sukatani, Jl. Raya Cikarang - Sukatani Jl. Kp. Kandang No.190, RT.005/RW.007, Sukaraya, Kec. Karangbahagia, Kabupaten Bekasi, Jawa Barat 17530</small>
+                                <a href="https://maps.app.goo.gl/tWB1KcDfopSSocaj7" target="_blank" class="btn btn-outline-auto btn-sm rounded-pill shadow mb-2 px-3"><i class="fa-solid fa-map-location-dot me-2"></i><span data-lang-en="View Google Maps" data-lang-id="Lihat Peta Google" data-lang-ko="구글 지도 보기">View Google Maps</span></a>
+                            </div>
+
+                            <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
+                                <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem;" data-lang-en="Intimate Dinner (Jakarta)" data-lang-id="Makan Malam (Jakarta)" data-lang-ko="소규모 만찬 (자카르타)">Intimate Dinner (Jakarta)</h2>
+                                <p style="font-size: 0.95rem;" data-lang-en="Wednesday, September 23, 2026" data-lang-id="Rabu, 23 September 2026" data-lang-ko="2026년 9월 23일 수요일">Wednesday, September 23, 2026</p>
+                                <p style="font-size: 0.95rem;" data-lang-en="07:00 PM - 09:00 PM (WIB)" data-lang-id="Pukul 19.00 - 21.00 WIB" data-lang-ko="오후 7:00 ~ 9:00 (WIB)">07:00 PM - 09:00 PM (WIB)</p>
+                                <p style="font-size: 0.95rem;" data-lang-en="Kampung Kecil Senayan" data-lang-id="Kampung Kecil Senayan" data-lang-ko="캄풍 케칠 세나얀 (Kampung Kecil Senayan)">Kampung Kecil Senayan</p>
+                            </div>
+                            <div class="py-2" data-aos="fade-down" data-aos-duration="1000">
+                                <small class="d-block my-1">Jl. Tentara Pelajar, RT.7/RW.12, Grogol Utara, Kec. Kebayoran Lama, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12210</small>
+                                <a href="https://maps.app.goo.gl/h4igwZL6KCeABo4U8" target="_blank" class="btn btn-outline-auto btn-sm rounded-pill shadow mb-2 px-3"><i class="fa-solid fa-map-location-dot me-2"></i><span data-lang-en="View Google Maps" data-lang-id="Lihat Peta Google" data-lang-ko="구글 지도 보기">View Google Maps</span></a>
+                            </div>
+                        </div>
+
+                        <!-- Dresscode Section (Disembunyikan di Korea) -->
+                        <div class="ko-hide">
+                            <p class="py-2 m-0" style="font-size: 0.95rem;" data-lang-en="We would kindly request you to follow the dress code below to match our warm atmosphere." data-lang-id="Untuk menciptakan suasana yang hangat, mohon dapat menyesuaikan busana dengan kode pakaian di bawah ini." data-lang-ko="">We would kindly request you to follow the dress code below to match our warm atmosphere.</p>
+
+                            <div class="py-2" data-aos="fade-down" data-aos-duration="1500">
+                                <p style="font-size: 0.95rem;" data-lang-en="Formal Casual" data-lang-id="Kasual Formal (Formal Casual)" data-lang-ko="">Formal Casual</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Wave Separator -->
+                <div class="svg-wrapper ko-hide">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="color-theme-svg no-gap-bottom">
+                        <path fill="currentColor" fill-opacity="1" d="M0,96L30,106.7C60,117,120,139,180,154.7C240,171,300,181,360,186.7C420,192,480,192,540,181.3C600,171,660,149,720,154.7C780,160,840,192,900,208C960,224,1020,224,1080,208C1140,192,1200,160,1260,138.7C1320,117,1380,107,1410,101.3L1440,96L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+                    </svg>
+                </div>
+
+                <!-- Love Gift / Wedding Gift Section (Dipindahkan ke atas Galeri) -->
+                <section class="bg-light-dark pb-3 ko-hide">
+                    <div class="container text-center">
+                        <h2 class="font-esthetic pt-3 mb-4" style="font-size: 2.25rem;" data-lang-en="Wedding Gift" data-lang-id="Tanda Kasih" data-lang-ko="">Wedding Gift</h2>
+                        <p class="mb-1" style="font-size: 0.95rem;" data-lang-en="If you wish to send your blessings as a gift, please use the bank account details below." data-lang-id="Bagi Anda yang ingin memberikan tanda kasih, dapat melalui rekening di bawah ini." data-lang-ko="">If you wish to send your blessings as a gift, please use the bank account details below.</p>
+
+                        <div class="bg-theme-auto rounded-4 shadow p-3 mx-4 mt-4 text-start" data-aos="fade-up" data-aos-duration="2500">
+                            <i class="fa-solid fa-money-bill-transfer"></i>
+                            <p class="d-inline ms-1" data-lang-en="Bank Transfer" data-lang-id="Transfer Bank" data-lang-ko="">Bank Transfer</p>
+
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <p class="m-0 p-0" style="font-size: 0.95rem;"><i class="fa-regular fa-user fa-sm me-1"></i>Intania Nur Hidayat</p>
+                                <button class="btn btn-outline-auto btn-sm shadow-sm rounded-4 py-0" style="font-size: 0.75rem;" data-bs-toggle="collapse" data-bs-target="#collapseTf"><i class="fa-solid fa-circle-info fa-sm me-1"></i><span data-lang-en="Info" data-lang-id="Info" data-lang-ko="">Info</span></button>
+                            </div>
+
+                            <div class="collapse" id="collapseTf">
+                                <hr class="my-2 py-1">
+                                <p class="m-0" style="font-size: 0.9rem;"><i class="fa-solid fa-building-columns me-1"></i>Bank Central Asia (BCA)</p>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <p class="m-0 p-0" style="font-size: 0.85rem;"><i class="fa-solid fa-credit-card me-1"></i>3431338872</p>
+                                    <button class="btn btn-outline-auto btn-sm shadow-sm rounded-4 py-0" style="font-size: 0.75rem;" data-copy="3431338872" onclick="undangan.util.copy(this)"><i class="fa-solid fa-copy"></i> <span data-lang-en="Copy" data-lang-id="Salin" data-lang-ko="">Copy</span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Korean-only optional account section (Dipindahkan ke atas Galeri) -->
+                <section class="bg-light-dark pb-3 ko-only" id="korean-account">
+                    <div class="container text-center py-2">
+                        <p class="mb-2 text-secondary" style="font-size: 0.82rem; line-height: 1.65;">
+                            멀리서 축하해 주시는 마음만으로도 충분히 감사드립니다.
+                        </p>
+
+                        <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 py-1 opacity-75"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseJihoonAccount"
+                                aria-expanded="false"
+                                aria-controls="collapseJihoonAccount"
+                                style="font-size: 0.78rem;">
+                            <i class="fa-regular fa-envelope me-1"></i>축하의 마음 전하기
+                        </button>
+
+                        <div class="collapse mt-3" id="collapseJihoonAccount">
+                            <div class="bg-theme-auto rounded-4 border border-secondary border-opacity-25 p-3 mx-4 text-start shadow-sm">
+                                <p class="m-0" style="font-size: 0.88rem;"><strong>신랑 한지훈</strong></p>
+                                <p class="mt-2 mb-1" style="font-size: 0.85rem;"><i class="fa-solid fa-building-columns me-1"></i>신한은행</p>
+                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                    <p class="m-0" style="font-size: 0.85rem;"><i class="fa-solid fa-credit-card me-1"></i>110-395-611226</p>
+                                    <button class="btn btn-outline-auto btn-sm rounded-4 py-0 px-2"
+                                            style="font-size: 0.72rem;"
+                                            data-copy="110-395-611226"
+                                            onclick="undangan.util.copy(this)">
+                                        <i class="fa-solid fa-copy me-1"></i>복사
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Gallery -->
+                <section class="bg-white-black pb-5 pt-3" id="gallery">
+                    <div class="container">
+                        <div class="border rounded-5 shadow p-3">
+
+                            <h2 class="font-esthetic text-center py-2 m-0" style="font-size: 2.25rem;" data-lang-en="Gallery" data-lang-id="Galeri Foto" data-lang-ko="갤러리">Gallery</h2>
+
+                            <div id="carousel-image-one" data-aos="fade-up" data-aos-duration="1500" class="carousel slide mt-4" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+
+                                <div class="carousel-inner rounded-4">
+                                    <div class="carousel-item active">
+                                        <img src="./assets/images/placeholder.webp" data-src="./assets/images/5.jpeg" alt="Photo 1" class="d-block img-fluid cursor-pointer" onclick="undangan.guest.modal(this)">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./assets/images/placeholder.webp" data-src="./assets/images/1.jpeg" alt="Photo 2" class="d-block img-fluid cursor-pointer" onclick="undangan.guest.modal(this)">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./assets/images/placeholder.webp" data-src="./assets/images/2.jpeg" alt="Photo 3" class="d-block img-fluid cursor-pointer" onclick="undangan.guest.modal(this)">
+                                    </div>
+                                </div>
+
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-image-one" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden" data-lang-en="Previous" data-lang-id="Sebelumnya" data-lang-ko="이전">Previous</span>
+                                </button>
+
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-image-one" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden" data-lang-en="Next" data-lang-id="Selanjutnya" data-lang-ko="다음">Next</span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Comment Section (Disembunyikan) -->
+                <section class="bg-light-dark my-0 pb-0 pt-3 d-none" id="comment">
+                    <div class="container">
+                        <div class="border rounded-5 shadow p-3 mb-2">
+                            <h2 class="font-esthetic text-center mt-2 mb-4" style="font-size: 2.25rem;" data-lang-en="Wishes &amp; Messages" data-lang-id="Ucapan &amp; Doa" data-lang-ko="축하 메시지">Wishes &amp; Messages</h2>
+
+                            <div class="mb-3">
+                                <label for="form-name" class="form-label my-1"><i class="fa-solid fa-person me-2"></i><span data-lang-en="Your Name" data-lang-id="Nama Anda" data-lang-ko="성함">Your Name</span></label>
+                                <input dir="auto" type="text" class="form-control shadow-sm rounded-4" id="form-name" minlength="2" maxlength="50" placeholder="Enter your name" data-placeholder-en="Enter your name" data-placeholder-id="Masukkan nama Anda" data-placeholder-ko="성함을 입력해 주세요" autocomplete="name" data-offline-disabled="false">
+                            </div>
+
+                            <!-- Opsi konfirmasi kehadiran (Disembunyikan) -->
+                            <div class="mb-3 d-none" id="form-presence-wrapper">
+                                <label for="form-presence" class="form-label my-1">
+                                    <i class="fa-solid fa-person-circle-question me-2"></i>
+                                    <span data-lang-en="Attendance Confirmation" data-lang-id="Konfirmasi Kehadiran" data-lang-ko="">Attendance Confirmation</span>
+                                </label>
+                                <select class="form-select shadow-sm rounded-4" id="form-presence" autocomplete="off" data-offline-disabled="false">
+                                    <option value="0" selected data-lang-en="Select attendance status" data-lang-id="Pilih konfirmasi kehadiran" data-lang-ko="">Select attendance status</option>
+                                    <option value="1" data-lang-en="✅ Attending - The Solemnization Ceremony (Cikarang)" data-lang-id="✅ Hadir - Akad Nikah (Cikarang)" data-lang-ko="">&#9989; Attending - The Solemnization Ceremony (Cikarang)</option>
+                                    <option value="2" data-lang-en="✅ Attending - Intimate Dinner (Jakarta)" data-lang-id="✅ Hadir - Makan Malam (Jakarta)" data-lang-ko="">&#9989; Attending - Intimate Dinner (Jakarta)</option>
+                                    <option value="3" data-lang-en="✅ Attending - Both Events" data-lang-id="✅ Hadir - Kedua Acara" data-lang-ko="">&#9989; Attending - Both Events</option>
+                                    <option value="4" data-lang-en="❌ Unable to Attend" data-lang-id="❌ Tidak Dapat Hadir" data-lang-ko="">&#10060; Unable to Attend</option>
+                                </select>
+                            </div>
+
+                            <div class="d-block mb-3" id="comment-form-default">
+                                <div id="information" class="alert alert-info alert-dismissible fade show rounded-4" role="alert">
+                                    <button type="button" class="btn-close rounded-4 p-3" data-bs-dismiss="alert" aria-label="Close" onclick="undangan.guest.closeInformation()"></button>
+
+                                    <p style="font-size: 1.25rem; font-weight: bold;" data-lang-en="Notice" data-lang-id="Informasi" data-lang-ko="안내사항">Notice</p>
+                                    <p class="m-0" data-lang-en="Please leave your warm wishes and prayers for the couple. Thank you!" data-lang-id="Silakan tinggalkan pesan ucapan dan doa hangat untuk kedua mempelai. Terima kasih!" data-lang-ko="두 사람의 새로운 시작을 위한 따뜻한 축하 메시지를 남겨 주세요.">Please leave your warm wishes and prayers for the couple. Thank you!</p>
+                                </div>
+
+                                <label for="form-comment" class="form-label my-1"><i class="fa-solid fa-comment me-2"></i><span data-lang-en="Wishes &amp; Message" data-lang-id="Pesan &amp; Ucapan" data-lang-ko="축하 메시지">Wishes &amp; Message</span></label>
+                                <div class="position-relative">
+                                    <button class="btn btn-secondary btn-sm rounded-4 shadow-sm me-1 my-1 position-absolute bottom-0 end-0" onclick="undangan.comment.gif.open(undangan.comment.gif.default)" aria-label="button gif" data-offline-disabled="false"><i class="fa-solid fa-photo-film"></i></button>
+                                    <textarea dir="auto" class="form-control shadow-sm rounded-4" id="form-comment" rows="4" minlength="1" maxlength="1000" placeholder="Write your warm wishes here..." data-placeholder-en="Write your warm wishes here..." data-placeholder-id="Tuliskan ucapan dan doa hangat Anda di sini..." data-placeholder-ko="두 사람에게 전할 축하 메시지를 작성해 주세요" autocomplete="off" data-offline-disabled="false"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="d-none mb-3" id="gif-form-default"></div>
+
+                            <div class="d-grid">
+                                <button class="btn btn-primary btn-sm rounded-4 shadow m-1" onclick="undangan.comment.send(this)" data-offline-disabled="false">
+                                    <i class="fa-solid fa-paper-plane me-2"></i><span data-lang-en="Send Message" data-lang-id="Kirim Pesan" data-lang-ko="메시지 전송">Send Message</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Area Komentar Kosong -->
+                        <div class="py-3" id="comments"></div>
+
+                        <!-- Pagination -->
+                        <nav class="d-flex d-none justify-content-center mt-1 mb-0" id="pagination"></nav>
+                    </div>
+                </section>
+
+                <!-- Wave Separator -->
+                <div class="svg-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="color-theme-svg no-gap-bottom">
+                        <path fill="currentColor" fill-opacity="1" d="M0,224L34.3,234.7C68.6,245,137,267,206,266.7C274.3,267,343,245,411,234.7C480,224,549,224,617,213.3C685.7,203,754,181,823,197.3C891.4,213,960,267,1029,266.7C1097.1,267,1166,213,1234,192C1302.9,171,1371,181,1406,186.7L1440,192L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
+                    </svg>
+                </div>
+
+            </main>
+
+            <!-- Navbar Bottom -->
+            <nav class="navbar navbar-expand sticky-bottom rounded-top-4 border-top p-0" id="navbar-menu">
+                <ul class="navbar-nav nav-justified w-100 align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="d-block" style="font-size: 0.7rem;" data-lang-en="Home" data-lang-id="Beranda" data-lang-ko="메인">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bride">
+                            <i class="fa-solid fa-user-group"></i>
+                            <span class="d-block" style="font-size: 0.7rem;" data-lang-en="Couple" data-lang-id="Mempelai" data-lang-ko="신랑·신부">Couple</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#wedding-date">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span class="d-block" style="font-size: 0.7rem;" data-lang-en="Schedule" data-lang-id="Acara" data-lang-ko="일정">Schedule</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">
+                            <i class="fa-solid fa-images"></i>
+                            <span class="d-block" style="font-size: 0.7rem;" data-lang-en="Gallery" data-lang-id="Galeri" data-lang-ko="갤러리">Gallery</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Welcome Page / Initial Language Selection -->
+    <div class="loading-page bg-white-black" id="welcome" style="opacity: 0;">
+        <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto">
+            <div class="d-flex flex-column text-center px-4" style="width: min(92vw, 420px);">
+                <h2 class="font-esthetic mb-3" style="font-size: 2.25rem;">Jihoon &amp; Intania</h2>
+
+                <img src="./assets/images/placeholder.webp" data-src="./assets/images/bg.jpeg" alt="background" class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto">
+
+                <h2 class="language-selection-title mb-2" style="font-size: 1.65rem;">언어를 선택해 주세요</h2>
+                <p class="mb-4 text-secondary" style="font-size: 0.9rem; line-height: 1.6;">
+                    Please select your language<br>
+                    Silakan pilih bahasa
+                </p>
+
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-light shadow rounded-4 py-2" onclick="openInvitationInLanguage('ko', this)"><strong>KO</strong>&nbsp;&nbsp;한국어</button>
+                    <button type="button" class="btn btn-light shadow rounded-4 py-2" onclick="openInvitationInLanguage('en', this)"><strong>EN</strong>&nbsp;&nbsp;English</button>
+                    <button type="button" class="btn btn-light shadow rounded-4 py-2" onclick="openInvitationInLanguage('id', this)"><strong>ID</strong>&nbsp;&nbsp;Bahasa Indonesia</button>
+                </div>
+
+                <div id="guest-name" class="mt-3" data-message="To Dear Guest" data-message-en="To Dear Guest" data-message-id="Kepada Yth. Bapak/Ibu/Saudara/i" data-message-ko="소중한 분께"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="d-flex position-fixed flex-column align-items-end" style="bottom: 10vh; right: 2vh; z-index: 1030;">
+        
+        <!-- Language Switcher Button Dropdown -->
+        <div class="dropdown mt-3">
+            <button class="btn bg-light-dark border btn-sm rounded-circle btn-transparent shadow-sm d-flex justify-content-center align-items-center" type="button" id="dropdownLanguage" data-bs-toggle="dropdown" aria-expanded="false" style="width: 38px; height: 38px;" title="Change Language">
+                <i class="fa-solid fa-language fs-5"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2" aria-labelledby="dropdownLanguage" style="min-width: 140px;">
+                <li><a class="dropdown-item rounded-3 py-1 px-3 d-flex align-items-center justify-content-between" href="#" onclick="setLanguage('en'); return false;">English <span class="badge bg-secondary ms-1">EN</span></a></li>
+                <li><a class="dropdown-item rounded-3 py-1 px-3 d-flex align-items-center justify-content-between" href="#" onclick="setLanguage('id'); return false;">Bahasa <span class="badge bg-secondary ms-1">ID</span></a></li>
+                <li><a class="dropdown-item rounded-3 py-1 px-3 d-flex align-items-center justify-content-between" href="#" onclick="setLanguage('ko'); return false;">한국어 <span class="badge bg-secondary ms-1">KO</span></a></li>
+            </ul>
+        </div>
+
+        <!-- Theme Button -->
+        <button type="button" id="button-theme" class="btn bg-light-dark border btn-sm rounded-circle d-none btn-transparent shadow-sm mt-3" aria-label="Change theme" onclick="undangan.theme.change()">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+
+        <!-- Audio Button -->
+        <button type="button" id="button-music" class="btn bg-light-dark border btn-sm rounded-circle d-none btn-transparent shadow-sm mt-3" aria-label="Change audio" data-offline-disabled="false">
+            <i class="fa-solid fa-circle-pause spin-button"></i>
+        </button>
+    </div>
+
+    <!-- Loading Page -->
+    <div class="loading-page bg-white-black" id="loading" style="opacity: 1;">
+        <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto">
+            <div class="d-flex flex-column width-loading text-center">
+                <img src="./assets/images/placeholder.webp" data-src="./assets/images/icon-192x192.png" fetchpriority="high" class="img-fluid mb-3 mx-auto object-fit-cover opacity-0" alt="icon" style="width: 3.5rem; height: 3.5rem;">
+                <div class="progress" role="progressbar" style="height: 0.5rem;" aria-label="progress bar">
+                    <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+                </div>
+                <small class="d-none mt-1 text-theme-auto" id="progress-info" style="font-size: 0.8rem;" data-lang-en="Loading invitation..." data-lang-id="Memuat undangan..." data-lang-ko="불러오는 중입니다...">Loading invitation...</small>
+                <noscript>
+                    <small class="mt-1 text-danger">JavaScript is required to view this invitation.</small>
+                </noscript>
+            </div>
+        </div>
+        <div class="text-center position-fixed w-100" style="bottom: 8%; left: 0;">
+            <div class="d-flex flex-column">
+                <small class="text-secondary">from</small>
+                <small class="text-theme-auto"><i class="fa-brands fa-github me-1"></i>dewanakl</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Image -->
+    <div class="modal fade" id="modal-image" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border border-0">
+                <div class="modal-body p-0">
+                    <div class="d-flex position-absolute top-0 end-0">
+                        <a class="btn d-flex justify-content-center align-items-center bg-overlay-auto p-2 m-1 rounded-circle border shadow-sm z-1" role="button" target="_blank" href="./assets/images/placeholder.webp" id="button-modal-click">
+                            <i class="fa-solid fa-arrow-up-right-from-square" style="width: 1em !important;"></i>
+                        </a>
+                        <button class="btn d-flex justify-content-center align-items-center bg-overlay-auto p-2 m-1 rounded-circle border shadow-sm z-1" id="button-modal-download">
+                            <i class="fa-solid fa-download" style="width: 1em !important;"></i>
+                        </button>
+                        <button class="btn d-flex justify-content-center align-items-center bg-overlay-auto p-2 m-1 rounded-circle border shadow-sm z-1" data-bs-dismiss="modal">
+                            <i class="fa-solid fa-circle-xmark" style="width: 1em !important;"></i>
+                        </button>
+                    </div>
+
+                    <img src="./assets/images/placeholder.webp" class="img-fluid w-100 rounded-4 cursor-pointer" alt="image" id="show-modal-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Switcher Script -->
+    <script>
+        function setLanguage(lang) {
+            if (!['en', 'id', 'ko'].includes(lang)) lang = 'en';
+
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-lang-' + lang + ']').forEach(function (el) {
+                el.innerHTML = el.getAttribute('data-lang-' + lang);
+            });
+
+            document.querySelectorAll('[data-placeholder-' + lang + ']').forEach(function (el) {
+                el.setAttribute('placeholder', el.getAttribute('data-placeholder-' + lang));
+            });
+
+            var guestElem = document.getElementById('guest-name');
+            if (guestElem && guestElem.hasAttribute('data-message-' + lang)) {
+                guestElem.setAttribute('data-message', guestElem.getAttribute('data-message-' + lang));
+            }
+
+            var url = new URL(window.location.href);
+            url.searchParams.set('lang', lang);
+            window.history.replaceState({}, '', url);
+        }
+
+        function openInvitationInLanguage(lang, button) {
+            setLanguage(lang);
+
+            // Use the invitation template's original opening routine so that
+            // music, animations, lazy-loaded images, comments, and other features
+            // continue to work exactly as before.
+            if (window.undangan && undangan.guest && typeof undangan.guest.open === 'function') {
+                undangan.guest.open(button);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var langParam = urlParams.get('lang');
+
+            var currentLang = langParam || 'en';
+            setLanguage(currentLang);
+        });
+    </script>
+</body>
+
+</html>
