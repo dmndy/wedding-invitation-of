@@ -26,7 +26,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/icon-192x192.png">
     <link rel="apple-touch-icon" sizes="192x192" href="./assets/images/icon-192x192.png">
 
-    <!-- Font (Ditambahkan Font Sacramento untuk ID & EN) -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Sacramento&display=swap">
@@ -42,17 +42,16 @@
             display: none !important;
         }
 
-        /* Styling Font khusus versi Korea */
+        /* Styling Font khusus versi Korea (Default Mode Terang) */
         html[lang="ko"] body {
             font-family: 'Noto Sans KR', sans-serif !important;
-            color: #333333 !important;
+            color: #333333;
             letter-spacing: -0.02em;
         }
 
         html[lang="ko"] .font-esthetic {
             font-family: 'Gowun Batang', 'Noto Sans KR', serif !important;
             font-weight: 700 !important;
-            color: #222222 !important;
             letter-spacing: -0.015em;
             word-break: keep-all;
         }
@@ -71,7 +70,7 @@
             letter-spacing: 0.02em;
         }
 
-        /* Penyesuaian Ukuran Font Cursive (Latin) agar Terbaca Jelas */
+        /* Penyesuaian Ukuran Font Cursive (Latin) */
         html[lang="id"] h1.font-esthetic,
         html[lang="en"] h1.font-esthetic {
             font-size: 2.75rem !important;
@@ -100,7 +99,27 @@
             font-weight: 700 !important;
         }
 
-        /* Mode Gelap (Dark Theme) Adjustment */
+        /* MODE GELAP (DARK THEME) UNTUK VERSI KOREA */
+        [data-bs-theme="dark"] html[lang="ko"] body,
+        html[data-bs-theme="dark"][lang="ko"] body,
+        [data-bs-theme="dark"] html[lang="ko"] *,
+        html[data-bs-theme="dark"][lang="ko"] * {
+            color: #e5e7eb !important; /* Abu-abu Terang Seragam */
+        }
+
+        [data-bs-theme="dark"] html[lang="ko"] .font-esthetic,
+        html[data-bs-theme="dark"][lang="ko"] .font-esthetic,
+        [data-bs-theme="dark"] html[lang="ko"] h1,
+        [data-bs-theme="dark"] html[lang="ko"] h2,
+        [data-bs-theme="dark"] html[lang="ko"] h3 {
+            color: #f3f4f6 !important; /* Abu-abu Sangat Terang / Putih Lembut untuk Judul */
+        }
+
+        [data-bs-theme="dark"] html[lang="ko"] .text-secondary {
+            color: #d1d5db !important;
+        }
+
+        /* General Dark Mode untuk ID & EN */
         [data-bs-theme="dark"] body {
             color: #d1d5db !important;
         }
@@ -197,7 +216,7 @@
                     <img src="./assets/images/bg.jpeg" alt="bg" class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home">
 
                     <div class="position-relative text-center bg-overlay-auto" style="background-color: unset;">
-                        <h1 class="font-esthetic pt-5 pb-3 fw-medium" data-lang-en="You are Invited" data-lang-id="Kami Mengundang" data-lang-ko="저희 결혼합니다">You are Invited</h1>
+                        <h1 class="font-esthetic pt-5 pb-3 fw-medium" data-lang-en="You are Cordially Invited" data-lang-id="Kami Mengundang Anda" data-lang-ko="저희 결혼합니다">You are Cordially Invited</h1>
 
                         <img src="./assets/images/bg.jpeg" alt="bg" onclick="openModalImage(this.src)" class="img-center-crop rounded-circle border border-3 border-light shadow my-3 mx-auto cursor-pointer">
 
@@ -346,7 +365,7 @@
                         <div class="ko-hide">
                             <p class="py-2 m-0" style="font-size: 0.95rem;" data-lang-en="We would kindly request you to follow the dress code below to match our warm atmosphere." data-lang-id="Untuk menciptakan suasana yang hangat, mohon dapat menyesuaikan busana dengan kode pakaian di bawah ini." data-lang-ko="">We would kindly request you to follow the dress code below to match our warm atmosphere.</p>
                             <div class="py-2" data-aos="fade-down" data-aos-duration="1500">
-                                <p style="font-size: 0.95rem;" data-lang-en="Formal Casual" data-lang-id="Formal Casual" data-lang-ko="">Formal Casual</p>
+                                <p style="font-size: 0.95rem;" data-lang-en="Formal Casual" data-lang-id="Kasual Formal (Formal Casual)" data-lang-ko="">Formal Casual</p>
                             </div>
                         </div>
                     </div>
@@ -433,7 +452,7 @@
                                         <img src="./assets/images/1.jpeg" alt="Photo 2" class="d-block img-fluid cursor-pointer" onclick="openModalImage(this.src)">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="./assets/images/2.jpeg" alt="Photo 3" class="d-block img-fluid cursor-pointer" onclick="openModalImage(this.src)">
+                                        <img src="./assets/images/3.jpeg" alt="Photo 3" class="d-block img-fluid cursor-pointer" onclick="openModalImage(this.src)">
                                     </div>
                                 </div>
 
