@@ -442,6 +442,8 @@
                                     <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                                     <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                     <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                    <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="4" aria-label="Slide 5"></button>
                                 </div>
 
                                 <div class="carousel-inner rounded-4">
@@ -452,7 +454,13 @@
                                         <img src="./assets/images/1.jpeg" alt="Photo 2" class="d-block img-fluid cursor-pointer" onclick="openModalImage(this.src)">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="./assets/images/3.jpeg" alt="Photo 3" class="d-block img-fluid cursor-pointer" onclick="openModalImage(this.src)">
+                                        <img src="./assets/images/2.jpeg" alt="Photo 3" class="d-block img-fluid cursor-pointer" onclick="openModalImage(this.src)">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./assets/images/3.jpeg" alt="Photo 4" class="d-block img-fluid cursor-pointer" onclick="openModalImage(this.src)">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./assets/images/cover.png" alt="Photo 5" class="d-block img-fluid cursor-pointer" onclick="openModalImage(this.src)">
                                     </div>
                                 </div>
 
@@ -645,6 +653,41 @@
             ko: '아직 등록된 축하 메시지가 없습니다.'
         };
 
+        const presenceTextMap = {
+            'Hadir - Cikarang': {
+                id: '✅ Hadir - Akad Nikah (Cikarang)',
+                en: '✅ Attending - Lunch (Cikarang)',
+                ko: '✅ 참석 - 치카랑 예식'
+            },
+            'Hadir - Jakarta': {
+                id: '✅ Hadir - Makan Malam (Jakarta)',
+                en: '✅ Attending - Dinner (Jakarta)',
+                ko: '✅ 참석 - 자카르타 만찬'
+            },
+            'Hadir - Kedua Acara': {
+                id: '✅ Hadir - Kedua Acara',
+                en: '✅ Attending - Both Events',
+                ko: '✅ 참석 - 전체 일정'
+            },
+            'Tidak Hadir': {
+                id: '❌ Tidak Dapat Hadir',
+                en: '❌ Unable to Attend',
+                ko: '❌ 불참'
+            }
+        };
+
+        function translatePresence(presenceValue, lang) {
+            if (!presenceValue || presenceValue === '-' || presenceValue === '') return '';
+            
+            // Periksa jika ada kata kunci yang cocok dari data
+            for (const key in presenceTextMap) {
+                if (presenceValue.includes(key) || presenceValue === key) {
+                    return presenceTextMap[key][lang] || presenceTextMap[key]['en'];
+                }
+            }
+            return presenceValue;
+        }
+
         function applyTheme(theme) {
             document.documentElement.setAttribute('data-bs-theme', theme);
             const icon = document.getElementById('theme-icon');
@@ -752,6 +795,9 @@
             if (emptyEl) {
                 emptyEl.innerText = emptyCommentText[lang] || emptyCommentText.en;
             }
+
+            // Muat ulang ucapan agar badge kehadiran ikut berubah sesuai bahasa terpilih
+            loadComments();
         }
 
         function toggleAudio() {
@@ -792,8 +838,22 @@
 
             const currentLang = document.documentElement.lang || 'en';
 
-            fetch(GOOGLE_SCRIPT_URL)
-                .then(res => res.json())
+            listContainer.innerHTML = `
+                <div class="text-center py-3 text-secondary">
+                    <i class="fa-solid fa-circle-notch fa-spin me-2"></i>
+                    <span style="font-size: 0.85rem;">Memuat ucapan...</span>
+                </div>
+            `;
+
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 7000);
+
+            fetch(GOOGLE_SCRIPT_URL, { signal: controller.signal })
+                .then(res => {
+                    clearTimeout(timeoutId);
+                    if (!res.ok) throw new Error('Network response was not ok');
+                    return res.json();
+                })
                 .then(data => {
                     listContainer.innerHTML = '';
                     if (!data || data.length === 0) {
@@ -801,25 +861,36 @@
                         return;
                     }
 
-                    data.reverse().forEach(item => {
+                    const reversedData = [...data].reverse();
+
+                    reversedData.forEach(item => {
                         const card = document.createElement('div');
                         card.className = 'bg-theme-auto p-3 rounded-4 border shadow-sm mb-2';
-                        
+
                         const hasPresence = item.kehadiran && item.kehadiran !== '-' && item.kehadiran !== '';
                         const isAttending = item.kehadiran && item.kehadiran.includes('Hadir');
+                        const translatedPresence = translatePresence(item.kehadiran, currentLang);
 
                         card.innerHTML = `
                             <div class="d-flex justify-content-between align-items-center mb-1">
                                 <strong class="text-theme-auto" style="font-size: 0.9rem;">${item.nama || 'Tamu'}</strong>
-                                ${hasPresence ? `<span class="badge ${isAttending ? 'bg-success' : 'bg-danger'}" style="font-size: 0.7rem;">${item.kehadiran}</span>` : ''}
+                                ${hasPresence ? `<span class="badge ${isAttending ? 'bg-success' : 'bg-danger'}" style="font-size: 0.7rem;">${translatedPresence}</span>` : ''}
                             </div>
                             <p class="m-0 text-secondary" style="font-size: 0.85rem;">${item.ucapan || ''}</p>
                         `;
                         listContainer.appendChild(card);
                     });
                 })
-                .catch(() => {
-                    listContainer.innerHTML = `<p class="text-secondary text-center py-2" id="empty-comment-msg">${emptyCommentText[currentLang] || emptyCommentText.en}</p>`;
+                .catch(err => {
+                    clearTimeout(timeoutId);
+                    listContainer.innerHTML = `
+                        <div class="text-center py-3 text-secondary">
+                            <p class="m-0" style="font-size: 0.85rem;" id="empty-comment-msg">${emptyCommentText[currentLang] || emptyCommentText.en}</p>
+                            <button class="btn btn-outline-secondary btn-sm rounded-pill mt-2 px-3 py-0" style="font-size: 0.75rem;" onclick="loadComments()">
+                                <i class="fa-solid fa-rotate-right me-1"></i> Coba Muat Ulang
+                            </button>
+                        </div>
+                    `;
                 });
         }
 
@@ -846,7 +917,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             initTheme();
             startCountdown();
-            loadComments();
 
             const rsvpForm = document.getElementById('rsvpForm');
             if (rsvpForm) {
