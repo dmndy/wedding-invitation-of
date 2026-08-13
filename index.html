@@ -99,33 +99,28 @@
             font-weight: 700 !important;
         }
 
-        /* MODE GELAP (DARK THEME) UNTUK VERSI KOREA */
-        [data-bs-theme="dark"] html[lang="ko"] body,
-        html[data-bs-theme="dark"][lang="ko"] body,
-        [data-bs-theme="dark"] html[lang="ko"] *,
-        html[data-bs-theme="dark"][lang="ko"] * {
-            color: #e5e7eb !important; /* Abu-abu Terang Seragam */
-        }
-
-        [data-bs-theme="dark"] html[lang="ko"] .font-esthetic,
-        html[data-bs-theme="dark"][lang="ko"] .font-esthetic,
-        [data-bs-theme="dark"] html[lang="ko"] h1,
-        [data-bs-theme="dark"] html[lang="ko"] h2,
-        [data-bs-theme="dark"] html[lang="ko"] h3 {
-            color: #f3f4f6 !important; /* Abu-abu Sangat Terang / Putih Lembut untuk Judul */
-        }
-
-        [data-bs-theme="dark"] html[lang="ko"] .text-secondary {
-            color: #d1d5db !important;
-        }
-
-        /* General Dark Mode untuk ID & EN */
+        /* ========================================================= */
+        /* MODE GELAP (DARK THEME) SERAGAM UNTUK SEMUA BAHASA (ID, EN, KO) */
+        /* ========================================================= */
         [data-bs-theme="dark"] body {
             color: #d1d5db !important;
         }
 
-        [data-bs-theme="dark"] .font-esthetic {
-            color: #e5e7eb !important;
+        [data-bs-theme="dark"] h1,
+        [data-bs-theme="dark"] h2,
+        [data-bs-theme="dark"] h3,
+        [data-bs-theme="dark"] strong,
+        [data-bs-theme="dark"] .font-esthetic,
+        [data-bs-theme="dark"] .text-theme-auto {
+            color: #f3f4f6 !important; /* Warna Putih Lembut / Abu Terang untuk Judul & Nama */
+        }
+
+        [data-bs-theme="dark"] p,
+        [data-bs-theme="dark"] span,
+        [data-bs-theme="dark"] small,
+        [data-bs-theme="dark"] div,
+        [data-bs-theme="dark"] .text-secondary {
+            color: #d1d5db !important; /* Warna Abu-abu Terang Pas untuk Isi Teks & Ucapan */
         }
 
         /* Elemen khusus versi Korea */
@@ -645,6 +640,12 @@
             ko: '아직 등록된 축하 메시지가 없습니다.'
         };
 
+        const loadingCommentText = {
+            id: 'Memuat ucapan...',
+            en: 'Loading messages...',
+            ko: '메시지를 불러오는 중...'
+        };
+
         const presenceTextMap = {
             'Hadir - Cikarang': {
                 id: '✅ Hadir - Akad Nikah (Cikarang)',
@@ -671,7 +672,6 @@
         function translatePresence(presenceValue, lang) {
             if (!presenceValue || presenceValue === '-' || presenceValue === '') return '';
             
-            // Periksa jika ada kata kunci yang cocok dari data
             for (const key in presenceTextMap) {
                 if (presenceValue.includes(key) || presenceValue === key) {
                     return presenceTextMap[key][lang] || presenceTextMap[key]['en'];
@@ -788,7 +788,7 @@
                 emptyEl.innerText = emptyCommentText[lang] || emptyCommentText.en;
             }
 
-            // Muat ulang ucapan agar badge kehadiran ikut berubah sesuai bahasa terpilih
+            // Reload comments to translate badges and loading status dynamically
             loadComments();
         }
 
@@ -833,7 +833,7 @@
             listContainer.innerHTML = `
                 <div class="text-center py-3 text-secondary">
                     <i class="fa-solid fa-circle-notch fa-spin me-2"></i>
-                    <span style="font-size: 0.85rem;">Memuat ucapan...</span>
+                    <span style="font-size: 0.85rem;">${loadingCommentText[currentLang] || loadingCommentText.en}</span>
                 </div>
             `;
 
@@ -865,7 +865,7 @@
 
                         card.innerHTML = `
                             <div class="d-flex justify-content-between align-items-center mb-1">
-                                <strong class="text-theme-auto" style="font-size: 0.9rem;">${item.nama || 'Tamu'}</strong>
+                                <strong style="font-size: 0.9rem;">${item.nama || 'Tamu'}</strong>
                                 ${hasPresence ? `<span class="badge ${isAttending ? 'bg-success' : 'bg-danger'}" style="font-size: 0.7rem;">${translatedPresence}</span>` : ''}
                             </div>
                             <p class="m-0 text-secondary" style="font-size: 0.85rem;">${item.ucapan || ''}</p>
@@ -879,7 +879,7 @@
                         <div class="text-center py-3 text-secondary">
                             <p class="m-0" style="font-size: 0.85rem;" id="empty-comment-msg">${emptyCommentText[currentLang] || emptyCommentText.en}</p>
                             <button class="btn btn-outline-secondary btn-sm rounded-pill mt-2 px-3 py-0" style="font-size: 0.75rem;" onclick="loadComments()">
-                                <i class="fa-solid fa-rotate-right me-1"></i> Coba Muat Ulang
+                                <i class="fa-solid fa-rotate-right me-1"></i> Reload
                             </button>
                         </div>
                     `;
